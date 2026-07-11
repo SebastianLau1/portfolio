@@ -153,8 +153,15 @@ export default function Home() {
       <section className="about shell" id="about">
         <div className="aboutLabel">ABOUT / 04</div>
         <div className="aboutCopy">
-          <p>I like the part of AI engineering where <em>models have to work in the real world.</em></p>
-          <p className="small">Currently an AI / Machine Learning Software Engineer at Credence, supporting Air Force and defense missions. B.A. in Computer Science and Data Science from UW–Madison.</p>
+          <p>Computer vision, forecasting, agent tooling, and backend systems—<em>built for real operational environments.</em></p>
+          <p className="small">My work spans real-time object tracking, supply-readiness forecasting, natural-language analysis, and legacy modernization for Air Force and defense programs.</p>
+          <figure className="aboutVisual">
+            <img src="/vision-tracking.png" alt="Abstract sequence showing a moving subject detected and tracked across video frames" />
+            <figcaption>
+              <span>Detection → segmentation → persistent tracking</span>
+              <span>AI / ML Software Engineer · B.A. Computer Science + Data Science</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
