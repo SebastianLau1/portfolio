@@ -96,7 +96,7 @@ export default function Home() {
         <div className="navLinks">
           <a href="#work">Work</a>
           <a href="#about">About</a>
-          <a className="navCta" href="mailto:sebastianglau2003@gmail.com">Let&apos;s talk ↗</a>
+          <a className="navCta" href="mailto:sebastianglau2003@gmail.com">Let&apos;s talk</a>
         </div>
       </nav>
 
@@ -105,7 +105,7 @@ export default function Home() {
         <h1>Building practical AI systems for <span>vision, data, and automation.</span></h1>
         <div className="heroBottom">
           <p>I work across computer vision, backend engineering, forecasting, and model-powered tools—with an emphasis on systems that are useful outside the demo.</p>
-          <a className="circleLink" href="#work" aria-label="See selected work">↓</a>
+          <a className="workLink" href="#work">View selected work</a>
         </div>
         <div className="trackingDecor" aria-hidden="true">
           <span className="trackBox trackOne"><b>TRACK 01</b></span>
@@ -128,7 +128,11 @@ export default function Home() {
                 <div className="projectId"><span>{project.index}</span><small>{project.tag}</small></div>
                 <h2>{project.title}</h2>
                 <div className="metric"><strong>{project.metric}</strong><span>{project.metricLabel}</span></div>
-                <span className="expand" aria-hidden="true">+</span>
+                <span className="expand">
+                  <span className="closedLabel">View details</span>
+                  <span className="openLabel">Hide details</span>
+                  <i aria-hidden="true" />
+                </span>
               </summary>
               <div className="projectBody">
                 <div className="projectIntro">
@@ -214,8 +218,8 @@ export default function Home() {
           <h2>Let&apos;s build<br />what&apos;s next.</h2>
         </div>
         <div className="contact">
-          <a href="mailto:sebastianglau2003@gmail.com">sebastianglau2003@gmail.com ↗</a>
-          <a href="https://www.linkedin.com/in/sebastian-lau-64a307290/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="mailto:sebastianglau2003@gmail.com">sebastianglau2003@gmail.com</a>
+          <a href="https://www.linkedin.com/in/sebastian-lau-64a307290/" target="_blank" rel="noreferrer">LinkedIn</a>
           <span>Honolulu, HI</span>
         </div>
       </footer>
