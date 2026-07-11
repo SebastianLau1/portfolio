@@ -48,6 +48,46 @@ const skills = [
   "PostgreSQL", "Docker", "Kubernetes", "AWS", "Playwright", "REST APIs",
 ];
 
+const modelStack = [
+  {
+    number: "01",
+    title: "Detection",
+    names: "YOLO · YOLO-E · Ultralytics",
+    description: "Fast object detection for live video: locating targets, producing bounding boxes, and establishing the first signal in a real-time vision pipeline.",
+    accent: "cyan",
+  },
+  {
+    number: "02",
+    title: "Segmentation",
+    names: "SAM 2.1",
+    description: "Pixel-level mask refinement around detected objects, used to improve spatial precision beyond a bounding box and support more useful visual outputs.",
+    accent: "acid",
+  },
+  {
+    number: "03",
+    title: "Tracking",
+    names: "SAMURAI · custom association",
+    description: "Maintaining identity over time through motion, crowding, and partial obstruction—with a focus on reducing drift and preserving track continuity.",
+    accent: "cyan",
+  },
+  {
+    number: "04",
+    title: "ML foundations",
+    names: "PyTorch · TensorFlow · scikit-learn",
+    description: "The core training, experimentation, and classical machine-learning toolkit behind model evaluation and applied predictive workflows.",
+    accent: "acid",
+  },
+];
+
+const systems = [
+  ["AI orchestration", "Bedrock, LangChain, and MCP for connecting models to tools, structured data, and natural-language analytical workflows."],
+  ["Data intelligence", "Pandas, NumPy, PostgreSQL, forecasting, anomaly detection, feature engineering, and explainable risk scoring."],
+  ["Production APIs", "FastAPI, Flask, Node.js, and REST interfaces that turn model logic into reliable, consumable software."],
+  ["Delivery", "Docker, Kubernetes, S3, SageMaker, Git, and AWS services for packaging, deployment, storage, and iteration."],
+  ["Automation", "Playwright-powered research and data collection workflows, paired with summarization and structured metadata extraction."],
+  ["Modernization", "AWS Transform-assisted legacy analysis: extracting COBOL business logic, mapping dependencies, and surfacing migration risk."],
+];
+
 export default function Home() {
   return (
     <main>
@@ -110,6 +150,56 @@ export default function Home() {
         <div className="aboutCopy">
           <p>I work where <em>models meet reality.</em> My experience spans computer vision, forecasting, agent tooling, backend APIs, and defense AI.</p>
           <p className="small">Currently an AI / Machine Learning Software Engineer at Credence, supporting Air Force and defense missions. B.A. in Computer Science and Data Science from UW–Madison.</p>
+        </div>
+      </section>
+
+      <section className="models shell" id="models">
+        <div className="sectionHead">
+          <p>Model intelligence</p>
+          <span>THE VISION STACK</span>
+        </div>
+        <div className="modelsIntro">
+          <h2>From pixels<br />to <em>persistence.</em></h2>
+          <p>Real-time computer vision is not one model. It is a chain of decisions—detect the object, understand its shape, preserve its identity, and deliver the result fast enough to matter.</p>
+        </div>
+        <div className="modelGrid">
+          {modelStack.map((item) => (
+            <article className={`modelCard ${item.accent}`} key={item.number}>
+              <span className="modelNumber">{item.number}</span>
+              <div><span className="modelType">{item.title}</span><h3>{item.names}</h3></div>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="systems shell">
+        <div className="sectionHead">
+          <p>Beyond the model</p>
+          <span>PRODUCTION SYSTEMS</span>
+        </div>
+        <div className="systemsGrid">
+          <div className="systemsStatement">
+            <span>BUILD PHILOSOPHY / 05</span>
+            <h2>A model is only useful when the system around it works.</h2>
+          </div>
+          <div className="systemList">
+            {systems.map(([title, description], index) => (
+              <article key={title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div><h3>{title}</h3><p>{description}</p></div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="process shell">
+        <div className="processHeader"><span>HOW I APPROACH THE WORK</span><strong>OBSERVE → MODEL → SHIP</strong></div>
+        <div className="processGrid">
+          <article><span>01 / Observe</span><h3>Start with the signal</h3><p>Understand the data, operational constraints, edge cases, and the decision the system actually needs to support.</p></article>
+          <article><span>02 / Model</span><h3>Compose the pipeline</h3><p>Choose models and features for the real requirement, then evaluate continuity, failure modes, and explainability—not just a headline metric.</p></article>
+          <article><span>03 / Ship</span><h3>Build the product layer</h3><p>Wrap intelligence in APIs, interfaces, automation, and monitoring so people can use it reliably in a live workflow.</p></article>
         </div>
       </section>
 
