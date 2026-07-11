@@ -151,7 +151,6 @@ export default function Home() {
       </section>
 
       <section className="about shell" id="about">
-        <div className="aboutLabel">ABOUT / 04</div>
         <div className="aboutCopy">
           <p>Computer vision, forecasting, agent tooling, and backend systems—<em>built for real operational environments.</em></p>
           <p className="small">My work spans real-time object tracking, supply-readiness forecasting, natural-language analysis, and legacy modernization for Air Force and defense programs.</p>
@@ -162,6 +161,50 @@ export default function Home() {
               <span>AI / ML Software Engineer · B.A. Computer Science + Data Science</span>
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section className="readiness shell" aria-labelledby="readiness-title">
+        <div className="readinessIntro">
+          <span>Illustrative system view · Demo data</span>
+          <h2 id="readiness-title">From supply signals to readiness decisions.</h2>
+          <p>A representative view of how forecasting, anomaly detection, and risk scoring can surface parts that may affect fleet readiness before they become urgent.</p>
+        </div>
+        <div className="readinessBoard">
+          <div className="boardTop">
+            <div><i /> Fleet readiness forecast</div>
+            <span>60-day outlook · Demo</span>
+          </div>
+          <div className="boardGrid">
+            <article className="chartPanel readinessTrend" aria-label="Illustrative projected readiness trend over sixty days">
+              <div className="chartTitle"><span>Projected readiness</span><strong>Forecast trend</strong></div>
+              <div className="barChart" aria-hidden="true">
+                {[88, 90, 87, 84, 82, 78, 76, 73, 71, 68, 66, 63].map((value, index) => <i key={index} style={{ height: `${value}%` }} />)}
+              </div>
+              <div className="chartAxis"><span>Today</span><span>+30 days</span><span>+60 days</span></div>
+            </article>
+
+            <article className="chartPanel riskMix" aria-label="Illustrative distribution of component supply risk">
+              <div className="chartTitle"><span>Supply risk</span><strong>Component mix</strong></div>
+              <div className="riskDonut" aria-hidden="true"><div><strong>12</strong><span>at risk</span></div></div>
+              <div className="riskLegend"><span><i className="high" />High</span><span><i className="medium" />Watch</span><span><i className="stable" />Stable</span></div>
+            </article>
+
+            <article className="chartPanel partsRisk" aria-label="Illustrative risk scores by subsystem">
+              <div className="chartTitle"><span>Risk by subsystem</span><strong>Priority queue</strong></div>
+              {[["Hydraulics", 84], ["Avionics", 68], ["Propulsion", 52], ["Airframe", 31]].map(([label, value]) => (
+                <div className="riskRow" key={label}><span>{label}</span><div><i style={{ width: `${value}%` }} /></div><b>{value}</b></div>
+              ))}
+            </article>
+
+            <article className="chartPanel shortageList" aria-label="Illustrative forecast of components approaching shortage">
+              <div className="chartTitle"><span>Shortage horizon</span><strong>Early warning</strong></div>
+              <div className="shortageRow"><span>Actuator assembly</span><b>14 days</b><i className="critical">High</i></div>
+              <div className="shortageRow"><span>Sensor module</span><b>27 days</b><i>Watch</i></div>
+              <div className="shortageRow"><span>Power unit</span><b>41 days</b><i>Watch</i></div>
+            </article>
+          </div>
+          <div className="boardNote">Conceptual interface based on the forecasting workflow described above. Values are illustrative and do not represent operational data.</div>
         </div>
       </section>
 
@@ -192,7 +235,6 @@ export default function Home() {
         </div>
         <div className="systemsGrid">
           <div className="systemsStatement">
-            <span>BUILD PHILOSOPHY / 05</span>
             <h2>The model is one part of the product.</h2>
           </div>
           <div className="systemList">
