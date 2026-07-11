@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "Sebastian Lau — AI / ML Engineer",
   description: "AI and machine learning engineer building production computer vision, forecasting, and intelligent software systems in Honolulu, Hawaii.",
-  metadataBase: new URL("https://sebastian-lau-ai.sites.openai.com"),
+  metadataBase: new URL("https://sebastian-lau-ai.sebastianlau843.chatgpt.site"),
   openGraph: {
     title: "Sebastian Lau — AI / ML Engineer",
     description: "I build AI that sees, reasons, and ships.",
