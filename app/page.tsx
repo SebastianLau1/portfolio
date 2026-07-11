@@ -107,6 +107,13 @@ export default function Home() {
           <p>I work across computer vision, backend engineering, forecasting, and model-powered tools—with an emphasis on systems that are useful outside the demo.</p>
           <a className="circleLink" href="#work" aria-label="See selected work">↓</a>
         </div>
+        <div className="trackingDecor" aria-hidden="true">
+          <span className="trackBox trackOne"><b>TRACK 01</b></span>
+          <span className="trackBox trackTwo"><b>MASK 02</b></span>
+          <span className="trackBox trackThree"><b>OBJECT 03</b></span>
+          <span className="trackPoint pointOne" />
+          <span className="trackPoint pointTwo" />
+        </div>
       </section>
 
       <section className="work shell" id="work">
