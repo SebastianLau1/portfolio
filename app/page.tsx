@@ -101,17 +101,11 @@ export default function Home() {
       </nav>
 
       <section className="hero shell" id="top">
-        <div className="eyebrow"><i /> Honolulu, Hawaii · Open to AI opportunities</div>
-        <h1>I build AI that<br /><span>sees, reasons,</span><br />and ships.</h1>
+        <div className="eyebrow"><i /> AI / Machine Learning Engineer · Honolulu, Hawaii</div>
+        <h1>Building practical AI systems for <span>vision, data, and automation.</span></h1>
         <div className="heroBottom">
-          <p>AI / Machine Learning Engineer turning ambitious models into fast, useful production systems.</p>
+          <p>I work across computer vision, backend engineering, forecasting, and model-powered tools—with an emphasis on systems that are useful outside the demo.</p>
           <a className="circleLink" href="#work" aria-label="See selected work">↓</a>
-        </div>
-        <div className="visionField" aria-hidden="true">
-          <span className="scanLine" />
-          <span className="box boxOne"><b>TRACK_01</b></span>
-          <span className="box boxTwo"><b>MASK_02</b></span>
-          <span className="dot dotOne" /><span className="dot dotTwo" /><span className="dot dotThree" />
         </div>
       </section>
 
@@ -148,7 +142,7 @@ export default function Home() {
       <section className="about shell" id="about">
         <div className="aboutLabel">ABOUT / 04</div>
         <div className="aboutCopy">
-          <p>I work where <em>models meet reality.</em> My experience spans computer vision, forecasting, agent tooling, backend APIs, and defense AI.</p>
+          <p>I like the part of AI engineering where <em>models have to work in the real world.</em></p>
           <p className="small">Currently an AI / Machine Learning Software Engineer at Credence, supporting Air Force and defense missions. B.A. in Computer Science and Data Science from UW–Madison.</p>
         </div>
       </section>
@@ -159,7 +153,7 @@ export default function Home() {
           <span>THE VISION STACK</span>
         </div>
         <div className="modelsIntro">
-          <h2>From pixels<br />to <em>persistence.</em></h2>
+          <h2>A closer look at the vision stack.</h2>
           <p>Real-time computer vision is not one model. It is a chain of decisions—detect the object, understand its shape, preserve its identity, and deliver the result fast enough to matter.</p>
         </div>
         <div className="modelGrid">
@@ -181,7 +175,7 @@ export default function Home() {
         <div className="systemsGrid">
           <div className="systemsStatement">
             <span>BUILD PHILOSOPHY / 05</span>
-            <h2>A model is only useful when the system around it works.</h2>
+            <h2>The model is one part of the product.</h2>
           </div>
           <div className="systemList">
             {systems.map(([title, description], index) => (
@@ -195,7 +189,7 @@ export default function Home() {
       </section>
 
       <section className="process shell">
-        <div className="processHeader"><span>HOW I APPROACH THE WORK</span><strong>OBSERVE → MODEL → SHIP</strong></div>
+        <div className="processHeader"><span>How I approach the work</span><strong>Understand · Build · Deliver</strong></div>
         <div className="processGrid">
           <article><span>01 / Observe</span><h3>Start with the signal</h3><p>Understand the data, operational constraints, edge cases, and the decision the system actually needs to support.</p></article>
           <article><span>02 / Model</span><h3>Compose the pipeline</h3><p>Choose models and features for the real requirement, then evaluate continuity, failure modes, and explainability—not just a headline metric.</p></article>
