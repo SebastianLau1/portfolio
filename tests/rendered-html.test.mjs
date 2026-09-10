@@ -27,6 +27,7 @@ test("server-renders the portfolio and YOLO demo", async () => {
   assert.match(html, /traffic-yolo-demo\.mp4/);
   assert.match(html, /Pause footage/);
   assert.doesNotMatch(html, /Real YOLO\. Real tracks\./);
+  assert.doesNotMatch(html, /View selected work|href="#work"|href="#about"/i);
   assert.match(html, />sebastianlau<\/a>/);
   for (const skill of [
     "JavaScript/TypeScript", "scikit-learn", "Time-series forecasting", "AWS Bedrock",

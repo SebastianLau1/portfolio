@@ -114,8 +114,6 @@ export default function Home() {
       <nav className="nav shell">
         <a className="mark" href="#top" aria-label="sebastianlau portfolio home">sebastianlau</a>
         <div className="navLinks">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
           <a className="navCta" href="mailto:sebastianglau2003@gmail.com">Let&apos;s talk</a>
         </div>
       </nav>
@@ -125,7 +123,6 @@ export default function Home() {
         <h1>AI systems for <span>vision, data, and automation.</span></h1>
         <div className="heroBottom">
           <p>I build computer vision, forecasting, and model-powered products that work beyond the demo.</p>
-          <a className="workLink" href="#work">View selected work</a>
         </div>
         <div className="trackingDecor" aria-hidden="true">
           <span className="trackBox trackOne"><b>TRACK 01</b></span>
