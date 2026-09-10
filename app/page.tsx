@@ -1,3 +1,6 @@
+import MotionController from "./motion-controller";
+import VisionSimulator from "./vision-simulator";
+
 const projects = [
   {
     index: "01",
@@ -91,6 +94,7 @@ const systems = [
 export default function Home() {
   return (
     <main>
+      <MotionController />
       <nav className="nav shell">
         <a className="mark" href="#top" aria-label="Sebastian Lau home">SL<span>.</span></a>
         <div className="navLinks">
@@ -116,14 +120,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="work shell" id="work">
+      <VisionSimulator />
+
+      <section className="work shell" id="work" data-reveal>
         <div className="sectionHead">
           <p>Selected systems</p>
           <span>2024 — NOW</span>
         </div>
         <div className="projectList">
           {projects.map((project) => (
-            <details className="project" key={project.index}>
+            <details className="project" key={project.index} style={{ "--item-index": Number(project.index) - 1 } as React.CSSProperties}>
               <summary>
                 <div className="projectId"><span>{project.index}</span><small>{project.tag}</small></div>
                 <h2>{project.title}</h2>
@@ -150,21 +156,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about shell" id="about">
+      <section className="about shell" id="about" data-reveal>
         <div className="aboutCopy">
           <p>Computer vision, forecasting, agent tooling, and backend systems—<em>built for real operational environments.</em></p>
           <p className="small">My work spans real-time object tracking, supply-readiness forecasting, natural-language analysis, and legacy modernization for Air Force and defense programs.</p>
           <figure className="aboutVisual">
-            <img src="/vision-tracking.png" alt="Abstract sequence showing a moving subject detected and tracked across video frames" />
+            <img src="/traffic-yolo-poster.jpg" alt="Cars and trucks identified with bounding boxes and persistent track IDs in a traffic video" />
             <figcaption>
-              <span>Detection → segmentation → persistent tracking</span>
+              <span>YOLO detection → ByteTrack identity → persistent tracking</span>
               <span>AI / ML Software Engineer · B.A. Computer Science + Data Science</span>
             </figcaption>
           </figure>
         </div>
       </section>
 
-      <section className="readiness shell" aria-labelledby="readiness-title">
+      <section className="readiness shell" aria-labelledby="readiness-title" data-reveal>
         <div className="readinessIntro">
           <span>Illustrative system view · Demo data</span>
           <h2 id="readiness-title">From supply signals to readiness decisions.</h2>
@@ -208,7 +214,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="models shell" id="models">
+      <section className="models shell" id="models" data-reveal>
         <div className="sectionHead">
           <p>Model intelligence</p>
           <span>THE VISION STACK</span>
@@ -219,7 +225,7 @@ export default function Home() {
         </div>
         <div className="modelGrid">
           {modelStack.map((item) => (
-            <article className={`modelCard ${item.accent}`} key={item.number}>
+            <article className={`modelCard ${item.accent}`} key={item.number} style={{ "--card-index": Number(item.number) - 1 } as React.CSSProperties}>
               <span className="modelNumber">{item.number}</span>
               <div><span className="modelType">{item.title}</span><h3>{item.names}</h3></div>
               <p>{item.description}</p>
@@ -228,7 +234,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="systems shell">
+      <section className="systems shell" data-reveal>
         <div className="sectionHead">
           <p>Beyond the model</p>
           <span>PRODUCTION SYSTEMS</span>
@@ -248,7 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="process shell">
+      <section className="process shell" data-reveal>
         <div className="processHeader"><span>How I approach the work</span><strong>Understand · Build · Deliver</strong></div>
         <div className="processGrid">
           <article><span>01 / Observe</span><h3>Start with the signal</h3><p>Understand the data, operational constraints, edge cases, and the decision the system actually needs to support.</p></article>
@@ -257,11 +263,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="skills shell" aria-label="Technical skills">
+      <section className="skills shell" aria-label="Technical skills" data-reveal>
         {skills.map((skill) => <span key={skill}>{skill}</span>)}
       </section>
 
-      <footer className="footer shell">
+      <footer className="footer shell" data-reveal>
         <div>
           <span className="eyebrow"><i /> Available for the right role</span>
           <h2>Let&apos;s build<br />what&apos;s next.</h2>
