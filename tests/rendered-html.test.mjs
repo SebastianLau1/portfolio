@@ -20,13 +20,15 @@ test("server-renders the portfolio and YOLO demo", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Sebastian Lau — AI \/ ML Engineer<\/title>/i);
-  assert.match(html, /Building practical AI systems/);
+  assert.match(html, /<title>sebastianlau portfolio<\/title>/i);
+  assert.match(html, /AI systems for/);
   assert.match(html, /Real model output/);
   assert.match(html, /YOLO11n \+ BYTE TRACK/);
   assert.match(html, /traffic-yolo-demo\.mp4/);
   assert.match(html, /Pause footage/);
-  assert.match(html, /Actual model output/);
+  assert.match(html, /Real YOLO\. Real tracks\./);
+  assert.match(html, />sebastianlau<\/a>/);
+  assert.doesNotMatch(html, /Honolulu|Hawaii|\u2014/);
 });
 
 test("keeps motion interactive and accessible", async () => {

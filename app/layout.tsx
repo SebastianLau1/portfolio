@@ -6,13 +6,13 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sebastian Lau — AI / ML Engineer",
-  description: "AI and machine learning engineer building production computer vision, forecasting, and intelligent software systems in Honolulu, Hawaii.",
-  metadataBase: new URL("https://sebastian-lau-ai.sebastianlau843.chatgpt.site"),
+  title: "sebastianlau portfolio",
+  description: "AI and machine learning portfolio focused on computer vision, forecasting, and intelligent software.",
+  metadataBase: new URL("https://sebastianlau.is-a.dev"),
   openGraph: {
-    title: "Sebastian Lau — AI / ML Engineer",
+    title: "sebastianlau portfolio",
     description: "I build AI that sees, reasons, and ships.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Sebastian Lau, AI and Machine Learning Engineer" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "sebastianlau portfolio, AI and Machine Learning Engineer" }],
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
