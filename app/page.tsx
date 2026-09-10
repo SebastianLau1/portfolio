@@ -9,7 +9,7 @@ const projects = [
     body: "YOLO detection, SAM 2.1 segmentation, stable track IDs, and occlusion recovery at 60 FPS.",
     metric: "60 FPS",
     metricLabel: "live processing",
-    stack: ["Python", "OpenCV", "YOLO-E", "SAM 2.1"],
+    stack: ["Python", "PyTorch", "YOLO", "YOLO-E", "SAM 2.1", "SAMURAI", "Ultralytics", "OpenCV"],
     details: [
       ["Pipeline", "YOLO detections feed SAM 2.1 masks and persistent IDs."],
       ["Engineering", "Built capture, association, overlays, and multi-object tracking."],
@@ -23,7 +23,7 @@ const projects = [
     body: "FastAPI forecasts, anomaly signals, and explainable risk scores from supply data.",
     metric: "70%+",
     metricLabel: "less manual review",
-    stack: ["FastAPI", "Pandas", "Bedrock", "LangChain"],
+    stack: ["Python", "FastAPI", "Pandas", "NumPy", "PostgreSQL", "AWS Bedrock", "LangChain", "RAG", "MCP"],
     details: [
       ["Data", "PostgreSQL and Pandas power forecasting and anomaly detection."],
       ["Product", "A FastAPI dashboard ranks parts by shortage risk."],
@@ -37,7 +37,7 @@ const projects = [
     body: "Mapped COBOL logic, dependencies, and migration risk for AI-assisted modernization.",
     metric: "100K+",
     metricLabel: "lines analyzed",
-    stack: ["COBOL", "AWS Transform", "MCP", "Python"],
+    stack: ["COBOL", "Java", "Python", "SQL", "AWS Transform", "MCP"],
     details: [
       ["Scope", "Analyzed more than 100,000 lines of legacy COBOL."],
       ["Analysis", "Extracted business logic and mapped dependencies."],
@@ -46,9 +46,27 @@ const projects = [
   },
 ];
 
-const skills = [
-  "Python", "TypeScript", "SQL", "PyTorch", "TensorFlow", "FastAPI",
-  "PostgreSQL", "Docker", "Kubernetes", "AWS", "Playwright", "REST APIs",
+const skillGroups = [
+  {
+    title: "Languages",
+    skills: ["Python", "JavaScript/TypeScript", "SQL", "Java", "COBOL"],
+  },
+  {
+    title: "Machine learning and data",
+    skills: ["PyTorch", "TensorFlow", "scikit-learn", "Pandas", "NumPy", "Time-series forecasting", "Anomaly detection", "Feature engineering"],
+  },
+  {
+    title: "Generative AI and vision",
+    skills: ["AWS Bedrock", "LangChain", "RAG", "MCP", "YOLO", "YOLO-E", "SAM 2.1", "SAMURAI", "Ultralytics", "OpenCV"],
+  },
+  {
+    title: "Full stack and APIs",
+    skills: ["FastAPI", "Flask", "Node.js", "React", "Next.js", "REST APIs", "Playwright", "Postman"],
+  },
+  {
+    title: "Cloud, databases, and DevOps",
+    skills: ["AWS SageMaker", "S3", "AWS Transform", "PostgreSQL", "Docker", "Kubernetes", "Git", "Cloudflare"],
+  },
 ];
 
 const modelStack = [
@@ -261,8 +279,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="skills shell" aria-label="Technical skills" data-reveal>
-        {skills.map((skill) => <span key={skill}>{skill}</span>)}
+      <section className="skills shell" aria-labelledby="skills-title" data-reveal>
+        <div className="skillsHeader">
+          <span>Technical skills</span>
+          <h2 id="skills-title">The complete stack.</h2>
+        </div>
+        <div className="skillGroups">
+          {skillGroups.map((group) => (
+            <article className="skillGroup" key={group.title}>
+              <h3>{group.title}</h3>
+              <div>{group.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <footer className="footer shell" data-reveal>
