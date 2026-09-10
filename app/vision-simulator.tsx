@@ -65,8 +65,7 @@ export default function VisionSimulator() {
         </div>
       </div>
 
-      <div className="visionCaption">
-        <h2>Real YOLO. Real tracks.</h2>
+      <div className="visionCaption visionCaptionCompact">
         <div>
           <p>YOLO11n and ByteTrack generated every box and ID. Pre-rendered for fast browser playback.</p>
           <a className="footageCredit" href="https://www.pexels.com/video/traffic-on-highway-in-city-12240861/" target="_blank" rel="noreferrer">Source footage · João Pavese / Pexels</a>

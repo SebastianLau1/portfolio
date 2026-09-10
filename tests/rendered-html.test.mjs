@@ -26,7 +26,7 @@ test("server-renders the portfolio and YOLO demo", async () => {
   assert.match(html, /YOLO11n \+ BYTE TRACK/);
   assert.match(html, /traffic-yolo-demo\.mp4/);
   assert.match(html, /Pause footage/);
-  assert.match(html, /Real YOLO\. Real tracks\./);
+  assert.doesNotMatch(html, /Real YOLO\. Real tracks\./);
   assert.match(html, />sebastianlau<\/a>/);
   assert.doesNotMatch(html, /Honolulu|Hawaii|\u2014/);
 });
