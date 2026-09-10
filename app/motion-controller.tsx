@@ -1,10 +1,18 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 export default function MotionController() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.documentElement;
+    const previousScrollRestoration = window.history.scrollRestoration;
+
+    window.history.scrollRestoration = "manual";
+    if (window.location.hash) {
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
     const updateProgress = () => {
       const height = document.documentElement.scrollHeight - window.innerHeight;
       root.style.setProperty("--scroll-progress", `${height > 0 ? window.scrollY / height : 0}`);
@@ -29,6 +37,7 @@ export default function MotionController() {
 
     return () => {
       observer.disconnect();
+      window.history.scrollRestoration = previousScrollRestoration;
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
     };

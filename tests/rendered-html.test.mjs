@@ -44,6 +44,8 @@ test("keeps motion interactive and accessible", async () => {
   assert.match(simulator, /onTimeUpdate/);
   assert.match(controller, /IntersectionObserver/);
   assert.match(controller, /--scroll-progress/);
+  assert.match(controller, /scrollRestoration = "manual"/);
+  assert.match(controller, /window\.scrollTo/);
   assert.match(css, /prefers-reduced-motion:reduce/);
   assert.match(renderer, /YOLO\("yolo11n\.pt"\)/);
   assert.match(renderer, /bytetrack\.yaml/);
