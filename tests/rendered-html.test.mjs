@@ -49,7 +49,8 @@ test("keeps motion interactive and accessible", async () => {
   assert.match(simulator, /aria-pressed/);
   assert.match(simulator, /onTimeUpdate/);
   assert.match(controller, /IntersectionObserver/);
-  assert.match(controller, /--scroll-progress/);
+  assert.doesNotMatch(controller, /scrollProgress|--scroll-progress|updateProgress/);
+  assert.doesNotMatch(css, /\.scrollProgress|--scroll-progress/);
   assert.match(controller, /scrollRestoration = "manual"/);
   assert.match(controller, /window\.scrollTo/);
   assert.match(css, /prefers-reduced-motion:reduce/);
