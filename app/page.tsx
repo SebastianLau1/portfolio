@@ -111,16 +111,13 @@ export default function Home() {
   return (
     <main>
       <MotionController />
-      <nav className="nav shell">
-        <a className="mark" href="#top" aria-label="sebastianlau portfolio home">sebastianlau</a>
-        <div className="navLinks">
-          <a className="navCta" href="mailto:sebastianglau2003@gmail.com">Let&apos;s talk</a>
-        </div>
-      </nav>
-
       <section className="hero shell" id="top">
-        <div className="eyebrow"><i /> AI / Machine Learning Engineer</div>
-        <h1>AI systems for <span>vision, data, and automation.</span></h1>
+        <div className="eyebrow"><i /> Systems that see, reason, and ship</div>
+        <h1>
+          <span className="heroName">Sebastian Lau</span>
+          <span className="heroRole">AI/ML Software Engineer</span>
+          <span className="heroFocus">AWS <b>|</b> Generative AI <b>|</b> Computer Vision <b>|</b> Data Analytics</span>
+        </h1>
         <div className="heroBottom">
           <p>I build computer vision, forecasting, and model-powered products that work beyond the demo.</p>
         </div>

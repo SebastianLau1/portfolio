@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo_Black, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const bodyFont = IBM_Plex_Sans({ variable: "--font-body", subsets: ["latin"], weight: ["400", "500", "600"] });
+const displayFont = Archivo_Black({ variable: "--font-display", subsets: ["latin"], weight: "400" });
+const monoFont = IBM_Plex_Mono({ variable: "--font-mono", subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export const metadata: Metadata = {
-  title: "sebastianlau portfolio",
-  description: "AI and machine learning portfolio focused on computer vision, forecasting, and intelligent software.",
+  title: "Sebastian Lau | AI/ML Software Engineer",
+  description: "AWS, generative AI, computer vision, and data analytics portfolio by Sebastian Lau.",
   metadataBase: new URL("https://sebastianlau.is-a.dev"),
   openGraph: {
-    title: "sebastianlau portfolio",
-    description: "I build AI that sees, reasons, and ships.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "sebastianlau portfolio, AI and Machine Learning Engineer" }],
+    title: "Sebastian Lau | AI/ML Software Engineer",
+    description: "AWS, generative AI, computer vision, and data analytics.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Sebastian Lau, AI/ML Software Engineer" }],
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body></html>;
+  return <html lang="en"><body className={`${bodyFont.variable} ${displayFont.variable} ${monoFont.variable}`}>{children}</body></html>;
 }

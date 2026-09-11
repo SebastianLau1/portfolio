@@ -20,15 +20,18 @@ test("server-renders the portfolio and YOLO demo", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>sebastianlau portfolio<\/title>/i);
-  assert.match(html, /AI systems for/);
+  assert.match(html, /<title>Sebastian Lau \| AI\/ML Software Engineer<\/title>/i);
+  assert.match(html, /Systems that see, reason, and ship/);
+  assert.match(html, /Sebastian Lau/);
+  assert.match(html, /AI\/ML Software Engineer/);
+  assert.match(html, /AWS.*Generative AI.*Computer Vision.*Data Analytics/i);
   assert.match(html, /Real model output/);
   assert.match(html, /YOLO11n \+ BYTE TRACK/);
   assert.match(html, /traffic-yolo-demo\.mp4/);
   assert.match(html, /Pause footage/);
   assert.doesNotMatch(html, /Real YOLO\. Real tracks\./);
   assert.doesNotMatch(html, /View selected work|href="#work"|href="#about"/i);
-  assert.match(html, />sebastianlau<\/a>/);
+  assert.doesNotMatch(html, /<nav|Let&#x27;s talk|>sebastianlau<\/a>/i);
   for (const skill of [
     "JavaScript/TypeScript", "scikit-learn", "Time-series forecasting", "AWS Bedrock",
     "SAMURAI", "Flask", "Next.js", "Postman", "AWS SageMaker", "Cloudflare",
