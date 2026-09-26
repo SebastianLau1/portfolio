@@ -90,3 +90,9 @@ a { color:inherit;text-decoration:none; }
 @media(max-width:800px){.visionStage{aspect-ratio:16/9}.visionStage video{width:100%;object-fit:cover}.stageHud.bottomRight{display:none}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}[data-reveal]{opacity:1!important;transform:none!important}.visionStage video{transform:none}.scanBeam{display:none}}
 @media(prefers-reduced-motion:reduce){.chartPanel:hover,.riskRow:hover,.shortageRow:hover,.readiness.is-visible .riskMix:hover .riskDonut{transform:none!important}}
+
+/* Compact links for the separately deployed project demos. */
+.deployedList{margin-top:36px}
+.deployedLinks{display:flex;gap:16px;margin-top:9px}
+.deployedLinks a{font:500 9px var(--font-geist-mono);text-transform:uppercase;letter-spacing:.08em;color:#aeb6b1}
+.deployedLinks a:hover,.deployedLinks a:focus-visible{color:var(--accent)}
