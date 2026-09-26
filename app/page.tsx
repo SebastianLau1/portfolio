@@ -132,18 +132,6 @@ export default function Home() {
 
       <VisionSimulator />
 
-      <section className="systems shell" id="projects" data-reveal>
-        <div className="sectionHead">
-          <p>Deployed projects</p>
-          <span>LIVE DEMOS · SOURCE CODE</span>
-        </div>
-        <div className="systemList deployedList">
-          <article><span>01</span><div><h3>Research Desk</h3><p>Source-grounded web research, summaries, and chat.</p><div className="deployedLinks"><a href="https://sebastianlau1.github.io/ai-web-research-summarizer/" target="_blank" rel="noreferrer">Live app ↗</a><a href="https://github.com/SebastianLau1/ai-web-research-summarizer" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></article>
-          <article><span>02</span><div><h3>Vision Lab</h3><p>Browser-based YOLO detection with image and webcam support.</p><div className="deployedLinks"><a href="https://sebastianlau1.github.io/vision-lab/" target="_blank" rel="noreferrer">Live app ↗</a><a href="https://github.com/SebastianLau1/vision-lab" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></article>
-          <article><span>03</span><div><h3>Forecast Studio</h3><p>Interactive time-series modeling with sample data and CSV uploads.</p><div className="deployedLinks"><a href="https://sebastianlau1.github.io/forecast-studio/" target="_blank" rel="noreferrer">Live app ↗</a><a href="https://github.com/SebastianLau1/forecast-studio" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></article>
-        </div>
-      </section>
-
       <section className="work shell" id="work" data-reveal>
         <div className="sectionHead">
           <p>Selected systems</p>
