@@ -41,6 +41,16 @@ test("server-renders the portfolio and YOLO demo", async () => {
   assert.doesNotMatch(html, /Honolulu|Hawaii|\u2014/);
 });
 
+test("links every deployed project to its live demo and source", async () => {
+  const html = await (await render()).text();
+  assert.match(html, /Live projects/);
+  for (const repo of ["vision-lab", "forecast-studio", "ai-web-research-summarizer"]) {
+    assert.match(html, new RegExp(`href="https://sebastianlau1\\.github\\.io/${repo}/"`));
+    assert.match(html, new RegExp(`href="https://github\\.com/SebastianLau1/${repo}"`));
+  }
+  assert.match(html, /\.gov Website Scanner/);
+});
+
 test("keeps motion interactive and accessible", async () => {
   const [simulator, controller, css, renderer] = await Promise.all([
     readFile(new URL("../app/vision-simulator.tsx", import.meta.url), "utf8"),
