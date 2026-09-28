@@ -116,7 +116,8 @@ const liveProjects = [
     stack: ["ONNX Runtime Web", "YOLO11n", "WebAssembly", "Canvas"],
     live: "https://sebastianlau1.github.io/vision-lab/",
     source: "https://github.com/SebastianLau1/vision-lab",
-    preview: "vision",
+    image: "/projects/vision-lab.jpg",
+    host: "sebastianlau1.github.io/vision-lab",
   },
   {
     index: "02",
@@ -126,7 +127,8 @@ const liveProjects = [
     stack: ["Time series", "Holt smoothing", "Backtesting", "Open data"],
     live: "https://sebastianlau1.github.io/forecast-studio/",
     source: "https://github.com/SebastianLau1/forecast-studio",
-    preview: "forecast",
+    image: "/projects/forecast-studio.jpg",
+    host: "sebastianlau1.github.io/forecast-studio",
   },
   {
     index: "03",
@@ -136,62 +138,10 @@ const liveProjects = [
     stack: ["Retrieval", "Cloudflare Workers", "xAI Grok", "FastAPI"],
     live: "https://sebastianlau1.github.io/ai-web-research-summarizer/",
     source: "https://github.com/SebastianLau1/ai-web-research-summarizer",
-    preview: "research",
+    image: "/projects/gov-website-scanner.jpg",
+    host: "sebastianlau1.github.io/ai-web-research-summarizer",
   },
 ];
-
-const previewSeries = Array.from({ length: 26 }, (_, i) => [14 + i * 11.6, 128 - i * 2.2 - 17 * Math.sin(i * 1.35)]);
-const toPoints = (points: number[][]) => points.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
-
-function DemoPreview({ kind }: { kind: string }) {
-  if (kind === "vision") {
-    return (
-      <>
-        <span className="pvBox pvPerson"><b>PERSON 0.91</b></span>
-        <span className="pvBox pvCar"><b>CAR 0.87</b></span>
-        <span className="pvBox pvDog"><b>DOG 0.78</b></span>
-        <span className="scanBeam" />
-        <span className="pvHud"><i />YOLO11n · ON-DEVICE</span>
-      </>
-    );
-  }
-
-  if (kind === "forecast") {
-    const observed = previewSeries.slice(0, 19);
-    const future = previewSeries.slice(18);
-    const band = [...future.map(([x, y], i) => [x, y - 4 - i * 3]), ...future.map(([x, y], i) => [x, y + 4 + i * 3]).reverse()];
-    return (
-      <svg className="pvChart" viewBox="0 0 320 200" aria-hidden="true">
-        {[50, 90, 130, 170].map((y) => <line className="pvGridline" key={y} x1="10" x2="310" y1={y} y2={y} />)}
-        <rect className="pvHoldout" x={observed[15][0]} y="26" width={observed[18][0] - observed[15][0]} height="156" />
-        <text x={observed[15][0] + 5} y="38">HOLDOUT</text>
-        <g className="pvDraw">
-          <polyline className="pvObserved" points={toPoints(observed)} />
-          <polygon className="pvBand" points={toPoints(band)} />
-          <polyline className="pvForecast" points={toPoints(future)} />
-          <circle className="pvEnd" cx={future.at(-1)?.[0]} cy={future.at(-1)?.[1]} r="3.5" />
-        </g>
-      </svg>
-    );
-  }
-
-  return (
-    <>
-      <span className="pvDoc">
-        {[[92, 58, 1], [84, 70, 2], [96, 44, 1], [74, 0, 3]].map(([first, second, cite], row) => (
-          <span className={`pvLine${row === 1 ? " pvLit" : ""}`} key={row}>
-            <em>{row + 1}</em>
-            <span><i style={{ width: `${first}%` }} />{second ? <i style={{ width: `${second}%` }} /> : null}</span>
-            <b>{cite}</b>
-          </span>
-        ))}
-      </span>
-      <span className="pvSources">
-        {[1, 2, 3].map((source) => <i className={source === 2 ? "pvLit" : ""} key={source}>{source}</i>)}
-      </span>
-    </>
-  );
-}
 
 export default function Home() {
   return (
@@ -230,9 +180,14 @@ export default function Home() {
         <div className="demoGrid">
           {liveProjects.map((project, index) => (
             <article className="demoCard" key={project.index} style={{ "--card-index": index } as React.CSSProperties}>
-              <a className={`demoPreview ${project.preview}`} href={project.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true">
-                <span className="pvStage"><DemoPreview kind={project.preview} /></span>
-                <span className="pvLive"><i />LIVE DEMO</span>
+              <a className="demoPreview" href={project.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true">
+                <span className="demoWindow">
+                  <span className="demoChrome"><i /><i /><i /><b>{project.host}</b><em><i />LIVE</em></span>
+                  <span className="demoShot">
+                    <img src={project.image} alt="" loading="lazy" decoding="async" />
+                    <span className="demoScan" />
+                  </span>
+                </span>
               </a>
               <div className="demoBody">
                 <div className="demoMeta"><span>{project.index}</span><small>{project.tag}</small></div>
