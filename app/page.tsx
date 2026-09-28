@@ -112,8 +112,8 @@ const liveProjects = [
     index: "01",
     tag: "COMPUTER VISION",
     title: "Vision Lab",
-    body: "YOLOv8n object detection on your webcam or any image, running entirely in the browser.",
-    stack: ["ONNX Runtime Web", "YOLOv8n", "WebAssembly", "Canvas"],
+    body: "YOLO11n object detection on your webcam or any image, running entirely in the browser.",
+    stack: ["ONNX Runtime Web", "YOLO11n", "WebAssembly", "Canvas"],
     live: "https://sebastianlau1.github.io/vision-lab/",
     source: "https://github.com/SebastianLau1/vision-lab",
     preview: "vision",
@@ -151,7 +151,7 @@ function DemoPreview({ kind }: { kind: string }) {
         <span className="pvBox pvCar"><b>CAR 0.87</b></span>
         <span className="pvBox pvDog"><b>DOG 0.78</b></span>
         <span className="scanBeam" />
-        <span className="pvHud"><i />YOLOv8n · ON-DEVICE</span>
+        <span className="pvHud"><i />YOLO11n · ON-DEVICE</span>
       </>
     );
   }
@@ -206,6 +206,10 @@ export default function Home() {
         </h1>
         <div className="heroBottom">
           <p>I build computer vision, forecasting, and model-powered products that work beyond the demo.</p>
+          <a className="heroCta" href="#projects">
+            <span><b>Try the live projects</b><small>3 deployed demos · no sign-in</small></span>
+            <i aria-hidden="true">↓</i>
+          </a>
         </div>
         <div className="trackingDecor" aria-hidden="true">
           <span className="trackBox trackOne"><b>TRACK 01</b></span>
@@ -213,6 +217,37 @@ export default function Home() {
           <span className="trackBox trackThree"><b>OBJECT 03</b></span>
           <span className="trackPoint pointOne" />
           <span className="trackPoint pointTwo" />
+        </div>
+      </section>
+
+      <section className="demos shell" id="projects" aria-labelledby="demos-title" data-reveal>
+        <div className="sectionHead">
+          <p>Live projects</p>
+          <span>OPEN IN YOUR BROWSER</span>
+        </div>
+        <div className="demosIntro">
+          <h2 id="demos-title">Try them live.</h2>
+          <p>Three deployed projects you can use right now. No sign-in, nothing to install, and the source is on GitHub.</p>
+        </div>
+        <div className="demoGrid">
+          {liveProjects.map((project, index) => (
+            <article className="demoCard" key={project.index} style={{ "--card-index": index } as React.CSSProperties}>
+              <a className={`demoPreview ${project.preview}`} href={project.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true">
+                <span className="pvStage"><DemoPreview kind={project.preview} /></span>
+                <span className="pvLive"><i />LIVE DEMO</span>
+              </a>
+              <div className="demoBody">
+                <div className="demoMeta"><span>{project.index}</span><small>{project.tag}</small></div>
+                <h3>{project.title}</h3>
+                <p>{project.body}</p>
+                <div className="chips">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
+                <div className="demoLinks">
+                  <a className="demoLaunch" href={project.live} target="_blank" rel="noreferrer">Launch demo <i aria-hidden="true">↗</i></a>
+                  <a href={project.source} target="_blank" rel="noreferrer">Source code ↗</a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -248,36 +283,6 @@ export default function Home() {
                 </div>
               </div>
             </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="demos shell" id="projects" aria-labelledby="demos-title" data-reveal>
-        <div className="sectionHead">
-          <p>Live projects</p>
-          <span>OPEN IN YOUR BROWSER</span>
-        </div>
-        <div className="demosIntro">
-          <h2 id="demos-title">Try them live.</h2>
-          <p>Three working demos. No sign-in, nothing to install, and the source is on GitHub.</p>
-        </div>
-        <div className="demoGrid">
-          {liveProjects.map((project, index) => (
-            <article className="demoCard" key={project.index} style={{ "--card-index": index } as React.CSSProperties}>
-              <a className={`demoPreview ${project.preview}`} href={project.live} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden="true">
-                <span className="pvStage"><DemoPreview kind={project.preview} /></span>
-              </a>
-              <div className="demoBody">
-                <div className="demoMeta"><span>{project.index}</span><small>{project.tag}</small></div>
-                <h3>{project.title}</h3>
-                <p>{project.body}</p>
-                <div className="chips">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
-                <div className="demoLinks">
-                  <a className="demoLaunch" href={project.live} target="_blank" rel="noreferrer">Launch demo <i aria-hidden="true">↗</i></a>
-                  <a href={project.source} target="_blank" rel="noreferrer">Source code ↗</a>
-                </div>
-              </div>
-            </article>
           ))}
         </div>
       </section>

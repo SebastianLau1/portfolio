@@ -10,15 +10,15 @@ Each project is its own repository, deployed to GitHub Pages and linked from the
 
 | Project | What it does | Demo | Code |
 | --- | --- | --- | --- |
-| Vision Lab | YOLOv8n object detection on your webcam or any image, running in the browser with ONNX Runtime Web | [Open](https://sebastianlau1.github.io/vision-lab/) | [vision-lab](https://github.com/SebastianLau1/vision-lab) |
+| Vision Lab | YOLO11n object detection on your webcam or any image, running in the browser with ONNX Runtime Web | [Open](https://sebastianlau1.github.io/vision-lab/) | [vision-lab](https://github.com/SebastianLau1/vision-lab) |
 | Forecast Studio | Three forecasting models compete on a chronological holdout; upload a CSV or explore a sample series | [Open](https://sebastianlau1.github.io/forecast-studio/) | [forecast-studio](https://github.com/SebastianLau1/forecast-studio) |
 | .gov Website Scanner | Scans .gov sources for cancer research and builds a brief where every line cites its page | [Open](https://sebastianlau1.github.io/ai-web-research-summarizer/) | [ai-web-research-summarizer](https://github.com/SebastianLau1/ai-web-research-summarizer) |
 
 ## What's on the site
 
+- **Live projects:** the three deployed demos above, right under the hero, which links straight to them.
 - **Real model output:** traffic footage processed with YOLO11n and ByteTrack (rendered with `scripts/render_yolo_demo.py`).
 - **Selected systems:** real-time object tracking, readiness forecasting, and legacy COBOL modernization work.
-- **Live projects:** the three deployed demos above.
 - **Readiness dashboard, vision stack, and skills:** an illustrative system view (demo data only) and the full technical stack.
 
 ## Stack

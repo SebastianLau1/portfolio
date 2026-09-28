@@ -44,6 +44,8 @@ test("server-renders the portfolio and YOLO demo", async () => {
 test("links every deployed project to its live demo and source", async () => {
   const html = await (await render()).text();
   assert.match(html, /Live projects/);
+  assert.match(html, /class="heroCta" href="#projects"/, "hero links straight to the live projects");
+  assert.ok(html.indexOf('id="projects"') < html.indexOf("Real model output"), "live projects sit directly under the hero");
   for (const repo of ["vision-lab", "forecast-studio", "ai-web-research-summarizer"]) {
     assert.match(html, new RegExp(`href="https://sebastianlau1\\.github\\.io/${repo}/"`));
     assert.match(html, new RegExp(`href="https://github\\.com/SebastianLau1/${repo}"`));
