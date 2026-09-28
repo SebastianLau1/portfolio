@@ -11,8 +11,8 @@ Each project is its own repository, deployed to GitHub Pages and linked from the
 | Project | What it does | Demo | Code |
 | --- | --- | --- | --- |
 | Vision Lab | YOLO11n object detection on your webcam or any image, running in the browser with ONNX Runtime Web | [Open](https://sebastianlau1.github.io/vision-lab/) | [vision-lab](https://github.com/SebastianLau1/vision-lab) |
-| Forecast Studio | Forecasts real NYC subway ridership, Wikipedia traffic, and Mauna Loa CO₂; three models compete on a chronological holdout | [Open](https://sebastianlau1.github.io/forecast-studio/) | [forecast-studio](https://github.com/SebastianLau1/forecast-studio) |
-| .gov Website Scanner | Scans .gov sources for cancer research and builds a brief where every line cites its page | [Open](https://sebastianlau1.github.io/ai-web-research-summarizer/) | [ai-web-research-summarizer](https://github.com/SebastianLau1/ai-web-research-summarizer) |
+| Forecast Studio | Forecasts real NYC subway ridership, Wikipedia traffic, and Mauna Loa CO₂; fifteen models compete on a chronological holdout | [Open](https://sebastianlau1.github.io/forecast-studio/) | [forecast-studio](https://github.com/SebastianLau1/forecast-studio) |
+| GovScrape AI | Scrapes .gov sources for cancer research and builds a brief where every line cites its page | [Open](https://sebastianlau1.github.io/ai-web-research-summarizer/) | [ai-web-research-summarizer](https://github.com/SebastianLau1/ai-web-research-summarizer) |
 
 ## What's on the site
 

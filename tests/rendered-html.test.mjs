@@ -51,7 +51,7 @@ test("links every deployed project to its live demo and source", async () => {
     assert.match(html, new RegExp(`href="https://sebastianlau1\\.github\\.io/${repo}/"`));
     assert.match(html, new RegExp(`href="https://github\\.com/SebastianLau1/${repo}"`));
   }
-  assert.match(html, /\.gov Website Scanner/);
+  assert.match(html, /GovScrape AI/);
 });
 
 test("keeps motion interactive and accessible", async () => {
