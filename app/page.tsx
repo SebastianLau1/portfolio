@@ -206,10 +206,6 @@ export default function Home() {
         </h1>
         <div className="heroBottom">
           <p>I build computer vision, forecasting, and model-powered products that work beyond the demo.</p>
-          <a className="heroCta" href="#projects">
-            <span><b>Try the live projects</b><small>3 deployed demos · no sign-in</small></span>
-            <i aria-hidden="true">↓</i>
-          </a>
         </div>
         <div className="trackingDecor" aria-hidden="true">
           <span className="trackBox trackOne"><b>TRACK 01</b></span>

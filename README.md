@@ -17,7 +17,7 @@ Each project is its own repository, deployed to GitHub Pages and linked from the
 ## What's on the site
 
 - **Real model output:** traffic footage processed with YOLO11n and ByteTrack (rendered with `scripts/render_yolo_demo.py`).
-- **Live projects:** the three deployed demos above, right after the video; the hero button links straight to them.
+- **Live projects:** the three deployed demos above, right after the video.
 - **Selected systems:** real-time object tracking, readiness forecasting, and legacy COBOL modernization work.
 - **Readiness dashboard, vision stack, and skills:** an illustrative system view (demo data only) and the full technical stack.
 

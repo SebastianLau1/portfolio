@@ -44,7 +44,7 @@ test("server-renders the portfolio and YOLO demo", async () => {
 test("links every deployed project to its live demo and source", async () => {
   const html = await (await render()).text();
   assert.match(html, /Live projects/);
-  assert.match(html, /class="heroCta" href="#projects"/, "hero links straight to the live projects");
+  assert.doesNotMatch(html, /heroCta/, "the hero stays button-free");
   assert.ok(html.indexOf("Real model output") < html.indexOf('id="projects"'), "the model video stays first after the hero");
   assert.ok(html.indexOf('id="projects"') < html.indexOf("Selected systems"), "live projects come right after the video");
   for (const repo of ["vision-lab", "forecast-studio", "ai-web-research-summarizer"]) {
