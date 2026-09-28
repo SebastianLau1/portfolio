@@ -220,6 +220,8 @@ export default function Home() {
         </div>
       </section>
 
+      <VisionSimulator />
+
       <section className="demos shell" id="projects" aria-labelledby="demos-title" data-reveal>
         <div className="sectionHead">
           <p>Live projects</p>
@@ -250,8 +252,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <VisionSimulator />
 
       <section className="work shell" id="work" data-reveal>
         <div className="sectionHead">
